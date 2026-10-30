@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { Hero } from './features/home/hero/hero';
+import {FeaturedProjects } from './features/home/featured-projects/featured-projects';
+import { ContactSection } from './features/home/contact-section/contact-section';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.scss',
+  standalone: true,
+  imports: [Hero, FeaturedProjects,ContactSection],
   templateUrl: './app.html',
+  styleUrl: './app.scss',
 })
-export class App {
-  protected readonly title = signal('mimi-portfolio');
-}
+export class App {}

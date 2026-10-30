@@ -1,0 +1,610 @@
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+/* =========================================
+   FEATURED PROJECTS SECTION
+========================================= */
+
+.projects-section {
+    position: relative;
+    width: 100%;
+    padding: 75px 7% 85px;
+
+    background:
+        radial-gradient(
+            circle at 0% 0%,
+            rgba(255, 222, 89, 0.08),
+            transparent 30%
+        ),
+        #fffaf4;
+
+    color: #171717;
+    overflow: hidden;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.projects-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+
+.projects-header .section-label {
+    margin-bottom: 8px;
+    font-size: 10px;
+}
+
+.projects-header .label-line {
+    width: 42px;
+}
+
+.projects-heading {
+    margin: 0;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: clamp(29px, 3vw, 38px);
+    font-weight: 800;
+
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+}
+
+.view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    margin-bottom: 5px;
+
+    color: #171717;
+    text-decoration: none;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.view-all span {
+    color: #ff914d;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.view-all:hover {
+    color: #ff914d;
+}
+
+.view-all:hover span {
+    transform: translateX(4px);
+}
+
+/* =========================================
+   PROJECTS GRID
+========================================= */
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   PROJECT CARDS
+========================================= */
+
+.project-card {
+    position: relative;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+
+    border: 1px solid #f2eee9;
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 15px rgba(30, 20, 10, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #f5d9c5;
+
+    box-shadow: 0 12px 30px rgba(30, 20, 10, 0.08);
+}
+
+/* =========================================
+   FULL CLICKABLE CARD
+========================================= */
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: block;
+
+    border-radius: inherit;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.project-card:focus-within {
+    outline: 2px solid #ff914d;
+    outline-offset: 3px;
+}
+
+.project-card:has(.card-overlay:focus-visible) {
+    outline: 2px solid #ff914d;
+    outline-offset: 3px;
+}
+
+/* Keep individual links clickable */
+
+.project-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.project-links,
+.project-link {
+    position: relative;
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.project-link {
+    cursor: pointer;
+}
+
+/* =========================================
+   PROJECT VISUAL AREA
+========================================= */
+
+.project-visual {
+    position: relative;
+
+    width: 100%;
+    height: 150px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 20px;
+
+    overflow: hidden;
+    background: #fffdfb;
+}
+
+.project-visual img,
+.project-logo {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 260px;
+    max-height: 120px;
+
+    margin: auto;
+    padding: 5px;
+
+    object-fit: contain;
+    object-position: center;
+
+    transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-visual img {
+    transform: scale(1.05);
+}
+
+/* =========================================
+   INDIVIDUAL LOGOS
+========================================= */
+
+.vm-visual img,
+.project-visual img[src*="vmagency"] {
+    max-width: 225px;
+    max-height: 105px;
+}
+
+.racing-visual img,
+.project-visual img[src*="smracing"] {
+    max-width: 255px;
+    max-height: 110px;
+}
+
+.vg-visual img,
+.project-visual img[src*="vgdetailing"] {
+    max-width: 240px;
+    max-height: 105px;
+}
+
+.robot-visual img,
+.project-visual img[src*="robot"] {
+    max-width: 190px;
+    max-height: 115px;
+}
+
+.petcare-visual img,
+.project-visual img[src*="petcare"] {
+    max-width: 200px;
+    max-height: 115px;
+}
+
+.vimyp-visual img,
+.project-visual img[src*="vimyp"] {
+    max-width: 260px;
+    max-height: 110px;
+}
+
+.fish-visual img,
+.project-visual img[src*="yummyfish"] {
+    max-width: 200px;
+    max-height: 115px;
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+.project-content {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 17px 18px 16px;
+}
+
+/* CATEGORY */
+
+.project-category {
+    margin-bottom: 8px;
+
+    color: #c17c4e;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+}
+
+/* PROJECT TITLE */
+
+.project-content h3 {
+    margin: 0 0 9px;
+
+    color: #171717;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 17px;
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+}
+
+/* DESCRIPTION */
+
+.project-content p {
+    margin: 0;
+    min-height: 68px;
+
+    color: #777;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+
+    line-height: 1.75;
+}
+/* =========================================
+   TECHNOLOGY TAGS
+========================================= */
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    margin-top: 9px;
+}
+
+.project-tags span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    padding: 9px 14px;
+
+    color: #665548;
+    background: #fff4eb;
+
+    border: 1px solid #f7e8db;
+    border-radius: 7px;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        background 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.project-card:hover .project-tags span {
+    background: #fff0e4;
+    border-color: #f2d8c5;
+}
+
+/* =========================================
+   MOBILE TECHNOLOGY TAGS
+========================================= */
+
+@media (max-width: 650px) {
+
+    .project-tags {
+        margin-top: 10px;
+        gap: 7px;
+    }
+
+    .project-tags span {
+        min-height: 36px;
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 380px) {
+
+    .project-tags span {
+        min-height: 34px;
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+}
+
+/* =========================================
+   PROJECT LINKS
+========================================= */
+
+.project-links {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-top: auto;
+    padding-top: 17px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    color: #222;
+    text-decoration: none;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ff914d;
+}
+
+.link-icon {
+    color: #ff914d;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.github-link {
+    margin-left: auto;
+}
+
+.github-mark {
+    font-size: 16px;
+}
+
+.project-status {
+    color: #888;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+    .projects-section {
+        padding: 65px 5%;
+    }
+
+    .projects-container {
+        max-width: 760px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 17px;
+    }
+
+    .project-visual {
+        height: 145px;
+    }
+
+    .project-content h3 {
+        font-size: 16px;
+    }
+
+    .project-content p {
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+    .projects-section {
+        padding: 50px 22px 60px;
+    }
+
+    .projects-container {
+        max-width: 480px;
+    }
+
+    .projects-header {
+        align-items: flex-end;
+        margin-bottom: 22px;
+    }
+
+    .projects-heading {
+        font-size: 29px;
+    }
+
+    .view-all {
+        font-size: 10px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .project-card {
+        border-radius: 12px;
+    }
+
+    .project-visual {
+        height: 155px;
+        padding: 15px;
+    }
+
+    .project-visual img {
+        max-width: 260px;
+        max-height: 125px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+    .project-category {
+        font-size: 10px;
+    }
+
+    .project-content h3 {
+        font-size: 17px;
+    }
+
+    .project-content p {
+        min-height: auto;
+        font-size: 12px;
+    }
+
+    .project-tags {
+        margin-top: 14px;
+        gap: 6px;
+    }
+
+    .project-tags span {
+        font-size: 9px;
+        padding: 6px 8px;
+    }
+
+    .project-links {
+        padding-top: 16px;
+    }
+
+    .project-link {
+        font-size: 11px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .projects-section {
+        padding: 42px 16px 50px;
+    }
+
+    .projects-heading {
+        font-size: 25px;
+    }
+
+    .view-all {
+        font-size: 9px;
+        gap: 4px;
+    }
+
+    .project-visual {
+        height: 140px;
+    }
+
+    .project-content {
+        padding: 15px;
+    }
+
+    .project-content h3 {
+        font-size: 16px;
+    }
+
+    .project-content p {
+        font-size: 11px;
+    }
+}
